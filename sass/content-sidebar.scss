@@ -1,0 +1,40 @@
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "susy";
+
+.site-content {
+  @include container(1140px);
+}
+.content-area {
+  float: left;
+  margin: 0 (-$size__site-sidebar) 0 0;
+  width: $size__site-main;
+}
+
+.site-main {
+  @include span (8 of 12);
+  background: #ffffff;
+  @include bp-medium{
+    width: 80%;
+    margin: auto;
+    float: none;
+    background: #ff6600;
+    @include clearfix-after;
+  }
+}
+
+.site-content .widget-area {
+  @include span (4 of 12);
+  overflow: hidden;
+  @include bp-medium{
+    width: 100%;
+    float: none;
+    margin: 0;
+    background: #ff6600;
+  }
+}
+
+.site-footer {
+  clear: both;
+  width: $size__site-main;
+}

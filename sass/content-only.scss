@@ -1,0 +1,26 @@
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "susy";
+
+.site-content {
+  @include container(1140px);
+}
+
+.site-main {
+  @include span (12 of 12);
+  @include bp-medium{
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+}
+.widget-area {
+  @include span (12 of 12);
+  @include bp-medium{
+    width: 100%;
+    float: none;
+    margin: 0;
+    background: #000;;
+  }
+
+}

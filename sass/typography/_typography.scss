@@ -1,0 +1,17 @@
+body,
+button,
+input,
+select,
+textarea {
+  color: $color__text-main;
+  font-family: $font__main;
+  @include font-size(18);
+  @include line-height(27);
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+@import "headings";
+
+@import "copy";
+

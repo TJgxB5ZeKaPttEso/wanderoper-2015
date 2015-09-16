@@ -1,0 +1,58 @@
+.site-content {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-content:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.content-area {
+  float: left;
+  margin: 0 -380px 0 0;
+  width: 100%;
+}
+
+.site-main {
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 3.84615%;
+  padding-right: 3.84615%;
+  background: #ffffff;
+}
+@media only screen and (max-width: 1024px) {
+  .site-main {
+    width: 80%;
+    margin: auto;
+    float: none;
+    background: #ff6600;
+    clear: both;
+  }
+}
+
+.site-content .widget-area {
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 3.84615%;
+  padding-right: 3.84615%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .site-content .widget-area {
+    width: 100%;
+    float: none;
+    margin: 0;
+    background: #ff6600;
+  }
+}
+
+.site-footer {
+  clear: both;
+  width: 100%;
+}
+
+/*# sourceMappingURL=content-sidebar.css.map */

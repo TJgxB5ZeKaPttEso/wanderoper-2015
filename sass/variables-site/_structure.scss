@@ -1,0 +1,15 @@
+$size__site-main: 100%;
+$size__site-sidebar: 380px;
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        container: 1140px,
+        container-position: center,
+        columns: 12,
+        gutters: 12,
+        gutter-position: inside,
+        column-width: 96px,
+        global-box-sizing: content-box,
+
+);
