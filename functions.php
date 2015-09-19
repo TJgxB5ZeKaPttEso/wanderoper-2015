@@ -124,7 +124,12 @@ function wanderoper_2015_scripts()
 
     wp_enqueue_script('wanderoper-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
 
+    wp_enqueue_script('wanderoper-2015-min-js', get_template_directory_uri() . '/assets/js/main.min.js');
+
+    wp_enqueue_script('wanderoper-2015-revslider', get_template_directory_uri() . '/js/revslider.js');
+
     wp_enqueue_style('wanderoper-2015-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 
 
     if (!is_home()) {

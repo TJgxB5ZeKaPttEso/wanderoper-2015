@@ -57,6 +57,7 @@
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <button class="menu-toggle" aria-controls="primary-menu"
                     aria-expanded="false"><?php esc_html_e('Primary Menu', 'wanderoper-2015'); ?></button>
+            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wanderoper-2015' ); ?></a>
             <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
         </nav>
         <!-- #site-navigation -->

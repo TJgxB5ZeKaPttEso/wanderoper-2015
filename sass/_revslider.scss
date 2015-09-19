@@ -10,3 +10,105 @@
 
   }
 }
+
+.tp-tab.selected .arrow-up {
+  position: relative;
+  left: 108px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  margin-top: -12px;
+}
+.tp-tab-mask[style] {
+  overflow: visible !important;
+}
+.slide-title-wrapper {
+  font-weight: normal;
+  @include font-size(12);
+  @include line-height(16);
+}
+.slide-title {
+  padding: 5px;
+}
+
+/* tabs container */
+.my-slider-tabs {
+
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-x: hidden;
+
+}
+
+/* individual tabs */
+.my-slider-tabs span {
+
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+
+  font: 14px Arial, Helvetica, sans-serif;
+  color: #FFF;
+
+  /* top and bottom spacing for tab text */
+  padding: 15px 0 15px 0;
+
+  background-color: #000; /* IE8 fallback */
+  background-color: rgba(0, 0, 0, 0.5);
+
+  -webkit-transition: background-color 0.4s ease-out;
+  -moz-transition: background-color 0.4s ease-out;
+  -o-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
+
+}
+
+/* active tab styles */
+.my-slider-tabs span.tab-active {
+
+  /* normal cursor for active tab */
+  cursor: auto;
+
+  /* colored line for active tab */
+  border-top: 5px solid #FFF;
+
+}
+
+/* tab background, active state and mouse over */
+.my-slider-tabs span.tab-active,
+.my-slider-tabs span:hover {
+
+  background-color: rgba(0, 0, 0, 0.75);
+
+}
+
+/* tab font size on landscape mobile */
+@media screen and (max-width: 640px) {
+
+  .my-slider-tabs span {font-size: 10px;}
+
+}
+
+/* tab font size on portrait mobile */
+@media screen and (max-width: 360px) {
+
+  .my-slider-tabs span {font-size: 8px;}
+
+}
+
+span.tab-active:before {
+  position: relative;
+  left: 108px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  margin-top: -12px;
+}
