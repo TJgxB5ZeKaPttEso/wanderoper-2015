@@ -1,7 +1,7 @@
 .tp-static-layers {
   width: 100%;
   height: 100%;
-  background : linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  background : linear-gradient(0deg, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0) 50%);
   @include bp-medium {
     background : linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 75%);
   }
@@ -33,13 +33,16 @@
   padding: 5px;
 }
 
+
+
+
 /* tabs container */
 .my-slider-tabs {
-
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  @include container(1140px);
+  display: table;
+  // position: absolute;
+  //bottom: 0;
+  //left: auto;
   z-index: 9999;
   overflow-x: hidden;
 
@@ -47,20 +50,23 @@
 
 /* individual tabs */
 .my-slider-tabs span {
-
+  display: table-cell;
   position: relative;
-  display: inline-block;
+  vertical-align: middle;
   text-align: center;
   cursor: pointer;
+  opacity: 0.5;
 
-  font: 14px Arial, Helvetica, sans-serif;
+  font-family: $font__main;
+  @include font-size(14);
+  @include line-height(20);
   color: #FFF;
 
   /* top and bottom spacing for tab text */
   padding: 15px 0 15px 0;
 
   background-color: #000; /* IE8 fallback */
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
 
   -webkit-transition: background-color 0.4s ease-out;
   -moz-transition: background-color 0.4s ease-out;
@@ -71,12 +77,12 @@
 
 /* active tab styles */
 .my-slider-tabs span.tab-active {
-
+  opacity: 1;
   /* normal cursor for active tab */
   cursor: auto;
 
   /* colored line for active tab */
-  border-top: 5px solid #FFF;
+  //border-top: 5px solid #FFF;
 
 }
 
@@ -84,8 +90,7 @@
 .my-slider-tabs span.tab-active,
 .my-slider-tabs span:hover {
 
-  background-color: rgba(0, 0, 0, 0.75);
-
+  opacity: 1;
 }
 
 /* tab font size on landscape mobile */
@@ -102,13 +107,14 @@
 
 }
 
-span.tab-active:before {
-  position: relative;
-  left: 108px;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 12px solid #fff;
-  margin-top: -12px;
+.slider-tab-wrapper {
+  height: 67px;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  @include bp-medium {
+    display: none;
+  }
 }

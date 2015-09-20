@@ -16,11 +16,8 @@
 }
 
 .site-main {
-  box-sizing: border-box;
-  width: 66.66667%;
+  width: 66.10169%;
   float: left;
-  padding-left: 3.84615%;
-  padding-right: 3.84615%;
   background: #ffffff;
 }
 @media only screen and (max-width: 1024px) {
@@ -34,11 +31,8 @@
 }
 
 .site-content .widget-area {
-  box-sizing: border-box;
-  width: 33.33333%;
+  width: 32.20339%;
   float: left;
-  padding-left: 3.84615%;
-  padding-right: 3.84615%;
   overflow: hidden;
 }
 @media only screen and (max-width: 1024px) {

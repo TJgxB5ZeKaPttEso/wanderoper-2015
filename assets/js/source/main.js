@@ -7,61 +7,30 @@
     // -->
 
     jQuery(document).ready(function() {
-
-
-        // added
-        var revapi = jQuery('#rev_slider_1_1').show().revolution(
-            {
-
-            });
-
-        // event for when slider has been loaded
-        revapi.on('revolution.slide.onloaded', function() {
-            console.log('slider loaded');
+        var revapi1 = jQuery('#rev_slider_1_1');
 
 
 
-            // slider loaded
+        revapi1.bind("revolution.slide.onchange",function (e,data) {
+            //var debug = jQuery.type( data );
+           // console.log(e);
+           // console.log(data);
+           // console.log(debug);
+            //console.log("slide changed to: "+data.slideIndex);
+            //console.log("current slide <li> Index: "+data.slideLIIndex);
+            var slideIndex = data.slideLIIndex;
+            console.log(slideIndex);
+            //data.currentslide - Current  Slide as jQuery Object
+            //data.prevslide - Previous Slide as jQuery Object
+            $( ".my-slider-tabs span:eq(" + slideIndex + ")" ).addClass('tab-active');
+            $( ".my-slider-tabs span:not(span:eq(" + slideIndex +"))").removeClass('tab-active');
+
 
         });
-
-        // event for when slide is changed
-        revapi.on('revolution.slide.onchange', function(e, data) {
-
-            // slider changed
-            var currentSlideNumber = data.slideIndex;
-            console.log(currentSlideNumber);
-        });
-
-        // additional methods and data from the slider's API
-        jQuery('.some-element-class-name').on('click', function() {
-
-            // pause slider
-            revapi.revpause();
-
-            // resume slider
-            revapi.revresume();
-
-            // go to previous slide
-            revapi.revprev();
-
-            // go to next slide
-            revapi.revnext();
-
-            // go to specific slide
-            revapi.revshowslide(2);
-
-            // get total number of slides
-            revapi.revmaxslide();
-
-        });
-        // added
 
 
         var slider = jQuery('.rev_slider_wrapper');
-        if(!slider.length) return;
-
-        // text to be used for the tabs, edit as needed
+        if(!slider.length) {return;}
 
         var tabContainer = jQuery('<div class="my-slider-tabs" />').appendTo(slider),
             slides = slider.find('li'),
@@ -69,16 +38,19 @@
             wid = Math.max(100 / len) + '%',
             tabs = [];
 
+        tabContainer.wrap('<div class="slider-tab-wrapper" />');
+
         slides.each(function(i) {
-            var tabText = $(this).data('title')
-            var span = tabs[i] = jQuery('<span />').css('width', wid).text(tabText).on('click', tabClick).appendTo(tabContainer);
-            if(i === 0) span.addClass('tab-active');
+            var tabText = $(this).data('title');
+            var span = tabs[i] = jQuery('<span />').addClass("theTab").css('width', wid).text(tabText).on('click', tabClick).appendTo(tabContainer);
+            if(i === 0) {
+                span.addClass('tab-active');
+            }
 
         });
 
 
         function tabClick() {
-
             for(var i = 0; i < len; i++) {
 
                 var tab = tabs[i];

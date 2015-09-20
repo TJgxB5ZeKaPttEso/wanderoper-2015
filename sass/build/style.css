@@ -906,8 +906,8 @@ object {
 .tp-static-layers {
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+  background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.3) 15%, transparent 50%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 15%, transparent 50%);
 }
 @media only screen and (max-width: 1024px) {
   .tp-static-layers {
@@ -951,43 +951,54 @@ object {
 
 /* tabs container */
 .my-slider-tabs {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
   z-index: 9999;
   overflow-x: hidden;
+}
+.my-slider-tabs:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /* individual tabs */
 .my-slider-tabs span {
+  display: table-cell;
   position: relative;
-  display: inline-block;
+  vertical-align: middle;
   text-align: center;
   cursor: pointer;
-  font: 14px Arial, Helvetica, sans-serif;
+  opacity: 0.5;
+  font-family: "Montserrat", arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 20px;
+  line-height: 1.25rem;
   color: #FFF;
   /* top and bottom spacing for tab text */
   padding: 15px 0 15px 0;
   background-color: #000;
   /* IE8 fallback */
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
 }
 
 /* active tab styles */
 .my-slider-tabs span.tab-active {
+  opacity: 1;
   /* normal cursor for active tab */
   cursor: auto;
   /* colored line for active tab */
-  border-top: 5px solid #FFF;
 }
 
 /* tab background, active state and mouse over */
 .my-slider-tabs span.tab-active,
 .my-slider-tabs span:hover {
-  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 1;
 }
 
 /* tab font size on landscape mobile */
@@ -1002,15 +1013,18 @@ object {
     font-size: 8px;
   }
 }
-span.tab-active:before {
-  position: relative;
-  left: 108px;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 12px solid #fff;
-  margin-top: -12px;
+.slider-tab-wrapper {
+  height: 67px;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 1024px) {
+  .slider-tab-wrapper {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
