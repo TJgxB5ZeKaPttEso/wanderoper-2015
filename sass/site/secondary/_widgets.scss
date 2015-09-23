@@ -1,3 +1,5 @@
+@import "susy";
+
 .widget {
 	margin: 0 0 1.5em;
 
@@ -10,4 +12,49 @@
 /* Search widget. */
 .widget_search .search-submit {
 	display: none;
+}
+
+.tribe-events-list-widget ol {
+  @include container;
+  padding: 0;
+}
+
+
+.tribe-events-list-widget ol li {
+  transition: box-shadow 0.25s;
+  transition-timing-function: ease-in-out;
+  width: 47.956%;
+  margin-right: 4.087%;
+  float: left;
+  margin-bottom: 30px;
+  list-style: none;
+  background-color: hsl(230,30%,99.6%);
+  box-shadow: 0 2px 10px 0px hsla(230, 30%,30%,0.1), 1px 1px 3px hsla(230,30%,30%, 0.1);
+  &:hover {
+    box-shadow: 0 4px 15px 0px hsla(230, 30%,30%,0.2), 2px 2px 6px hsla(230,30%,30%, 0.2);
+
+  }
+  @include bp-medium {
+    width: 30%;
+  }
+  &:nth-of-type(2n) {
+    width: 47.956%;
+    margin-right: 0;
+  }
+  @include bp-medium {
+    width: 30%;
+  }
+}
+
+h4.entry-title.summary {
+  @include font-size(16);
+  @include line-height(20);
+  margin: 10px;
+}
+
+.tribe-events-list-widget .duration {
+  font-weight: 700;
+  margin: 0 10px 10px 10px;
+  @include font-size(16);
+  @include line-height(20);
 }

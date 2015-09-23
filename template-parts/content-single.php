@@ -12,6 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<p>this is content-single.php</p>
 
 		<div class="entry-meta">
 			<?php wanderoper_2015_posted_on(); ?>

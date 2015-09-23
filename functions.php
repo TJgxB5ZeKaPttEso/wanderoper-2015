@@ -130,14 +130,7 @@ function wanderoper_2015_scripts()
 
     wp_enqueue_style('wanderoper-2015-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-
-
-    if (!is_home()) {
-        wp_enqueue_style('wanderoper-2015-layout-style', get_template_directory_uri() . '/layouts/content-sidebar.css');
-    }
-    if (is_home()) {
-        wp_enqueue_style('wanderoper-2015-layout-style', get_template_directory_uri() . '/layouts/content-only.css');
-    }
+    wp_enqueue_style('wanderoper-2015-layout-style', get_template_directory_uri() . '/layouts/content-only.css');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

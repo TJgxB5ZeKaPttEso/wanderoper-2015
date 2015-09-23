@@ -24,7 +24,7 @@
 }
 
 .site-content .widget-area {
-  @include span (4 of 12);
+  @include span (3 of 12);
   overflow: hidden;
   @include bp-medium{
     width: 100%;

@@ -39,6 +39,7 @@
 /* tabs container */
 .my-slider-tabs {
   @include container(1140px);
+  padding: 0 0.5em;
   display: table;
   // position: absolute;
   //bottom: 0;
@@ -117,4 +118,13 @@
   @include bp-medium {
     display: none;
   }
+}
+
+iframe {
+  border: 0px inset;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
 }

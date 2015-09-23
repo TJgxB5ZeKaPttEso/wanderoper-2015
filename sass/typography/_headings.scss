@@ -1,4 +1,15 @@
-h1, h2, h3, h4, h5, h6 {
+h1{
   clear: both;
   @include font-size(24);
+}
+
+h2, h3 {
+  clear: both;
+  @include font-size(18);
+}
+
+h2, h3, h4, h5, h6 {
+  clear: both;
+  @include font-size(18);
+  font-weight: normal;
 }

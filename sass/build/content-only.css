@@ -10,10 +10,9 @@
 }
 
 .site-main {
-  width: 100%;
+  width: 66.10169%;
   float: left;
   margin-left: 0;
-  margin-right: 0;
 }
 @media only screen and (max-width: 1024px) {
   .site-main {
@@ -24,10 +23,9 @@
 }
 
 .widget-area {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
+  width: 32.20339%;
+  float: right;
+  margin-left: 1.69492%;
 }
 @media only screen and (max-width: 1024px) {
   .widget-area {
@@ -36,6 +34,17 @@
     margin: 0;
     background: #000;
   }
+}
+
+.menu-hauptmenu-container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu-hauptmenu-container:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /*# sourceMappingURL=content-only.css.map */

@@ -279,10 +279,23 @@ textarea {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   clear: both;
   font-size: 24px;
   font-size: 1.5rem;
+}
+
+h2, h3 {
+  clear: both;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+h2, h3, h4, h5, h6 {
+  clear: both;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: normal;
 }
 
 p {
@@ -545,7 +558,7 @@ a:hover, a:active {
 }
 .main-navigation a {
   display: block;
-  padding: 1.3em 1em;
+  padding: 1.3em 1.5em;
   text-decoration: none;
   line-height: 1.3em;
   color: white;
@@ -683,6 +696,66 @@ a:hover, a:active {
 /* Search widget. */
 .widget_search .search-submit {
   display: none;
+}
+
+.tribe-events-list-widget ol {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+.tribe-events-list-widget ol:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.tribe-events-list-widget ol li {
+  -webkit-transition: box-shadow 0.25s;
+          transition: box-shadow 0.25s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  width: 47.956%;
+  margin-right: 4.087%;
+  float: left;
+  margin-bottom: 30px;
+  list-style: none;
+  background-color: #fefefe;
+  box-shadow: 0 2px 10px 0px rgba(54, 61, 99, 0.1), 1px 1px 3px rgba(54, 61, 99, 0.1);
+}
+.tribe-events-list-widget ol li:hover {
+  box-shadow: 0 4px 15px 0px rgba(54, 61, 99, 0.2), 2px 2px 6px rgba(54, 61, 99, 0.2);
+}
+@media only screen and (max-width: 1024px) {
+  .tribe-events-list-widget ol li {
+    width: 30%;
+  }
+}
+.tribe-events-list-widget ol li:nth-of-type(2n) {
+  width: 47.956%;
+  margin-right: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .tribe-events-list-widget ol li {
+    width: 30%;
+  }
+}
+
+h4.entry-title.summary {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+  margin: 10px;
+}
+
+.tribe-events-list-widget .duration {
+  font-weight: 700;
+  margin: 0 10px 10px 10px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20px;
+  line-height: 1.25rem;
 }
 
 /*--------------------------------------------------------------
@@ -954,6 +1027,7 @@ object {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 0.5em;
   display: table;
   z-index: 9999;
   overflow-x: hidden;
@@ -1025,6 +1099,15 @@ object {
   .slider-tab-wrapper {
     display: none;
   }
+}
+
+iframe {
+  border: 0px inset;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
 }
 
 /*# sourceMappingURL=style.css.map */

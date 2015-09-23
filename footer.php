@@ -12,9 +12,7 @@
 ?>
 
 	</div><!-- #content -->
-
-<!--livereload and typekit-->
-
+<!-- livereload -->
 <script src="//localhost:35729/livereload.js"></script>
 
 

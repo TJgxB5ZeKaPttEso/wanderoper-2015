@@ -6,7 +6,8 @@ $susy: (
         output: float,
         container: 1140px,
         container-position: center,
-        gutter-position: outside,
+        gutter-position: before,
         global-box-sizing: content-box,
-
+        columns: 12,
+        gutters: 1/4,
 );
