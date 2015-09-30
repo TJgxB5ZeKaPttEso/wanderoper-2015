@@ -3,7 +3,10 @@ p {
 }
 
 dfn, cite, em, i {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 400;
+  @include font-size(16);
+  color: lighten($color__text-main, 20%);
 }
 
 blockquote {
@@ -17,7 +20,7 @@ address {
 pre {
   background: $color__background-pre;
   font-family: $font__pre;
-  @include font-size(0.9375);
+  @include font-size(16);
   line-height: $font__line-height-pre;
   margin-bottom: 1.6em;
   max-width: 100%;

@@ -22,12 +22,61 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-    <?php putRevSlider('home-slider-main', 'homepage'); ?>
+
+
     <a class="skip-link screen-reader-text"
        href="#content"><?php esc_html_e('Skip to content', 'wanderoper-2015'); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
-        <?php if (get_header_image() && ('blank' == get_header_textcolor()) ) : ?>
+        <?php
+        /**
+         * Slider Revolution setup
+         */
+
+        //------------ Get Post Slug
+
+        $post_id = (get_the_ID());
+        $post = get_post($post_id);
+        $slug = $post->post_name;
+        //echo $slug;
+
+        //------------ Check for corresponding slider Alias
+
+        $aliases = all_rev_sliders_in_array();
+        if (!is_home()) {
+            if (in_array($slug, $aliases)) {
+                putRevSlider($slug);
+            } else {
+                if (is_page()|| is_single() ) {
+                    if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
+                        wanderoper_header_thumbnail_before();
+                        the_title();
+                        wanderoper_header_thumbnail_after();
+
+                    } else {
+                        wanderoper_no_header_thumbnail_before();
+                        the_title();
+                        wanderoper_header_thumbnail_after();
+                    }
+
+                }
+                if (is_post_type_archive()) {
+
+                    // Get Archive name and delete Archive from string
+                    $title = get_the_archive_title();
+                    $croppedTitle = str_replace('Archive: ', '', $title);
+
+                    wanderoper_no_header_thumbnail_before();
+                    echo $croppedTitle;
+                    wanderoper_header_thumbnail_after();
+                }
+            }
+        } else {
+            putRevSlider('home-slider-main');
+        };
+
+        ?>
+        <?php if (get_header_image() && ('blank' == get_header_textcolor())) : ?>
             <div class="header-image">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                     <img src="<?php header_image(); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>"
@@ -36,32 +85,33 @@
             </div>
         <?php endif; // End header image check. ?>
         <?php
-        if ( get_header_image() && !('blank' == get_header_textcolor()) ) {
+        if (get_header_image() && !('blank' == get_header_textcolor())) {
             echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">';
         } else {
             echo '<div class="site-branding">';
         }
-        ?>            <div class="title-box">
-                <?php if (is_front_page() && is_home()) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                              rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                             rel="home"><?php bloginfo('name'); ?></a></p>
-                <?php endif; ?>
-                <p class="site-description"><?php bloginfo('description'); ?></p>
-            </div>
+        ?>
+        <div class="title-box">
+            <?php if (is_front_page() && is_home()) : ?>
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
+                                          rel="home"><?php bloginfo('name'); ?></a></h1>
+            <?php else : ?>
+                <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
+                                         rel="home"><?php bloginfo('name'); ?></a></p>
+            <?php endif; ?>
+            <p class="site-description"><?php bloginfo('description'); ?></p>
         </div>
-        <!-- .site-branding -->
+</div>
+<!-- .site-branding -->
 
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle" aria-controls="primary-menu"
-                    aria-expanded="false"><?php esc_html_e('Primary Menu', 'wanderoper-2015'); ?></button>
-            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wanderoper-2015' ); ?></a>
-            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-        </nav>
-        <!-- #site-navigation -->
-    </header>
-    <!-- #masthead -->
+<nav id="site-navigation" class="main-navigation" role="navigation">
+    <button class="menu-toggle" aria-controls="primary-menu"
+            aria-expanded="false"><?php esc_html_e('Primary Menu', 'wanderoper-2015'); ?></button>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'wanderoper-2015'); ?></a>
+    <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+</nav>
+<!-- #site-navigation -->
+</header>
+<!-- #masthead -->
 
-    <div id="content" class="site-content">
+<div id="content" class="site-content">

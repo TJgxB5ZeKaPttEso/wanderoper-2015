@@ -2,11 +2,18 @@
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 27px;
+  margin-top: 1.6875rem;
 }
 .site-content:after {
   content: " ";
   display: block;
   clear: both;
+}
+@media only screen and (max-width: 1024px) {
+  .site-content {
+    margin-top: 0;
+  }
 }
 
 .site-main {
@@ -45,6 +52,21 @@
   content: " ";
   display: block;
   clear: both;
+}
+
+article {
+  background: #fff;
+  padding: 2.5em 3em;
+}
+@media only screen and (max-width: 30em) {
+  article {
+    padding: 1.5em 1.5em;
+  }
+}
+
+aside {
+  background: #fff;
+  padding: 15px;
 }
 
 /*# sourceMappingURL=content-only.css.map */

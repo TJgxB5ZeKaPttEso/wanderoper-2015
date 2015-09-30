@@ -3,13 +3,20 @@ h1{
   @include font-size(24);
 }
 
-h2, h3 {
+h2,{
   clear: both;
-  @include font-size(18);
+  @include font-size(24);
+  margin: 0;
+  font-weight: 400;
 }
 
-h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
   clear: both;
-  @include font-size(18);
+  @include font-size(20);
   font-weight: normal;
+}
+
+.entry-title {
+  @include font-size (26);
+  @include line-height(32);
 }

@@ -14,8 +14,13 @@ body {
 
 blockquote, q {
 	quotes: "" "";
-
-	&:before,
+  background-color: hsl(230,30%,95%);
+  margin: 0;
+  padding: 1em;
+  border-left: 15px solid;
+  	&:before {
+	  content:"";
+	}
 	&:after {
 		content: "";
 	}

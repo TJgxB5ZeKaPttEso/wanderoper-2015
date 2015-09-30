@@ -130,6 +130,8 @@ function wanderoper_2015_scripts()
 
     wp_enqueue_style('wanderoper-2015-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
+    wp_enqueue_style('wanderoper-2015-icons', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
     wp_enqueue_style('wanderoper-2015-layout-style', get_template_directory_uri() . '/layouts/content-only.css');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -163,3 +165,41 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * all slider aliases
+ */
+
+
+function all_rev_sliders_in_array(){
+    if (class_exists('RevSlider')) {
+        $theslider     = new RevSlider();
+        $arrSliders = $theslider->getArrSliders();
+        $arrA     = array();
+        $arrT     = array();
+        foreach($arrSliders as $slider){
+            $arrA[]     = $slider->getAlias();
+            $arrT[]     = $slider->getTitle();
+        }
+        if($arrA && $arrT){
+            $result = array_combine($arrA, $arrT);
+        }
+        else
+        {
+            $result = false;
+        }
+        return $result;
+    }
+}
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * remove Auto p tags
+ */
+
+remove_filter('the_content', 'wpautop');

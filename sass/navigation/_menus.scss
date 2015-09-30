@@ -8,6 +8,7 @@
   clear: both;
   background: #313131;
   background: hsl(0, 0%, 19%);
+
   ul {
     display: none;
     list-style: none;
@@ -31,6 +32,7 @@
         &:hover > ul,
         &.focus > ul {
           left: 100%;
+
         }
       }
 
@@ -52,6 +54,7 @@
       left: auto;
     }
   }
+
   li {
     float: left;
     position: relative;
@@ -60,6 +63,7 @@
     &.focus > a {
     }
   }
+
   a {
     display: block;
     padding: 1.3em 1.5em;
@@ -73,6 +77,7 @@
   .current-menu-item > a,
   .current_page_ancestor > a {
   }
+
 }
 
 /* Small menu. */
@@ -110,3 +115,4 @@
     width: 50%;
   }
 }
+
