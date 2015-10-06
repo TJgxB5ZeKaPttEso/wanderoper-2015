@@ -32,8 +32,8 @@
         /**
          * Slider Revolution setup
          */
-
-        //------------ Get Post Slug
+        if (is_plugin_active('revslider/revslider.php')) {
+            //------------ Get Post Slug
 
         $post_id = (get_the_ID());
         $post = get_post($post_id);
@@ -47,7 +47,7 @@
             if (in_array($slug, $aliases)) {
                 putRevSlider($slug);
             } else {
-                if (is_page()|| is_single() ) {
+                if (is_page() || is_single()) {
                     if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
                         wanderoper_header_thumbnail_before();
                         the_title();
@@ -73,7 +73,8 @@
             }
         } else {
             putRevSlider('home-slider-main');
-        };
+        }
+        }
 
         ?>
         <?php if (get_header_image() && ('blank' == get_header_textcolor())) : ?>

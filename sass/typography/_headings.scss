@@ -1,6 +1,7 @@
 h1{
   clear: both;
   @include font-size(24);
+  margin: 0;
 }
 
 h2,{

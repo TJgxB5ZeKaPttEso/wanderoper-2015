@@ -25,7 +25,7 @@ add_filter( 'body_class', 'wanderoper_2015_body_classes' );
 
 function wanderoper_header_thumbnail_before () {
 	$thumb_id = get_post_thumbnail_id();
-	$thumb_url = wp_get_attachment_image_src($thumb_id, 'full', true);
+	$thumb_url = wp_get_attachment_image_src($thumb_id, 'large-thumb', true);
 
 	echo
 		'<div class="slider-fallback"  style="background-image: url(' .

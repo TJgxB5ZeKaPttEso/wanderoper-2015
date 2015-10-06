@@ -17,11 +17,13 @@
 
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="wanderoper-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wanderoper-2015' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wanderoper-2015' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wanderoper-2015' ), 'wanderoper-2015', '<a href="http://johanneskrohn.de" rel="designer">Johannes Krohn</a>' ); ?>
 		</div><!-- .site-info -->
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

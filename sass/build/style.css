@@ -295,6 +295,7 @@ h1 {
   clear: both;
   font-size: 24px;
   font-size: 1.5rem;
+  margin: 0;
 }
 
 h2 {
@@ -1203,6 +1204,17 @@ h1.slider-fallback-title {
   font-size: 3.125rem;
   line-height: 56px;
   line-height: 3.5rem;
+}
+
+.wanderoper-footer {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wanderoper-footer:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /*# sourceMappingURL=style.css.map */

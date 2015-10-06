@@ -37,7 +37,6 @@ module.exports = function (grunt) {
                 files: {
                     'sass/build/style.css': 'sass/style.scss',
                     'sass/build/content-sidebar.css': 'sass/content-sidebar.scss',
-                    'sass/build/content-only.css': 'sass/content-only.scss',
                 }
             }
         },
@@ -65,13 +64,13 @@ module.exports = function (grunt) {
             minify: {
                 expand: true,
                 cwd: 'sass/build',
-                src: ['*.css', '!*.min.css', '!content-sidebar.css','!content-only.css' ],
+                src: ['*.css', '!*.min.css', '!content-sidebar.css'],
                 ext: '.css'
             },
             optionallayouts: {
                 expand: true,
                 cwd: 'sass/build',
-                src: ['content-sidebar.css', 'content-only.css'],
+                src: ['content-sidebar.css'],
                 dest: 'layouts',
                 ext: '.css'
             }
