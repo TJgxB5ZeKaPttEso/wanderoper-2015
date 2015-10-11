@@ -7,6 +7,16 @@
 
     jQuery(document).ready(function () {
 
+        // --> Repertoire jQuery Setup
+
+        $("a:contains('Repertoire')").click(function(e) {
+            e.preventDefault();
+            $(".slider-tab-wrapper").slideToggle("fast");
+        });
+
+
+        // <-- Repertoire jQuery Setup
+
         var currentslider = "#" + $("div [id^=rev_slider]:not([id$=wrapper])").attr('id');
         var revapi1 = jQuery(currentslider);
 
@@ -22,8 +32,8 @@
             console.log(slideIndex);
             //data.currentslide - Current  Slide as jQuery Object
             //data.prevslide - Previous Slide as jQuery Object
-            $(".my-slider-tabs span:eq(" + slideIndex + ")").addClass('tab-active');
-            $(".my-slider-tabs span:not(span:eq(" + slideIndex + "))").removeClass('tab-active');
+            $(".my-slider-tabs a:eq(" + slideIndex + ")").addClass('tab-active');
+            $(".my-slider-tabs a:not(a:eq(" + slideIndex + "))").removeClass('tab-active');
 
 
         });
@@ -44,7 +54,12 @@
 
         slides.each(function (i) {
             var tabText = $(this).data('title');
-            var span = tabs[i] = jQuery('<span />').addClass("theTab").css('width', wid).text(tabText).on('click', tabClick).appendTo(tabContainer);
+            var tabLink = $(this).data('link');
+            console.log(tabLink);
+            if (! tabLink ) {
+                tabLink = '#';
+            }
+            var span = tabs[i] = jQuery('<a href="' + tabLink + '" />').addClass("theTab").css('width', wid).text(tabText).on('click', tabClick).appendTo(tabContainer);
             if (i === 0) {
                 span.addClass('tab-active');
             }

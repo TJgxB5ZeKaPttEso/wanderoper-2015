@@ -2,8 +2,12 @@
 @import "mixins/mixins-master";
 @import "susy";
 
+.site {
+  background-image: url('../images/bg_neu.jpg');
+}
+
 .site-content {
-  @include container(1140px);
+  @include container(960px);
   @include margin-top(27);
   @include bp-medium{
     margin-top: 0;
@@ -12,7 +16,7 @@
 }
 
 .site-main {
-  @include span (8 first);
+  @include span (12);
   @include bp-medium{
     width: 100%;
     float: none;
@@ -31,13 +35,13 @@
 }
 
 .menu-hauptmenu-container {
-  @include container(1140px);
+  @include container(960px);
 }
 
 article {
   background: #fff;
   //box-shadow: 0 2px 10px 0px hsla(230, 30%,30%,0.1), 1px 1px 3px hsla(230,30%,30%, 0.1);
-  padding: 2.5em 3em;
+  padding: 5.5em 7em;
   @include bp-small {
     padding: 1.5em 1.5em;
   }

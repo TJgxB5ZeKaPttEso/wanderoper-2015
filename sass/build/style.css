@@ -1082,6 +1082,7 @@ object {
   display: table;
   z-index: 9999;
   overflow-x: hidden;
+  min-height: 66px;
 }
 .my-slider-tabs:after {
   content: " ";
@@ -1090,7 +1091,7 @@ object {
 }
 
 /* individual tabs */
-.my-slider-tabs span {
+.my-slider-tabs a {
   display: table-cell;
   position: relative;
   vertical-align: middle;
@@ -1113,7 +1114,7 @@ object {
 }
 
 /* active tab styles */
-.my-slider-tabs span.tab-active {
+.my-slider-tabs a.tab-active {
   opacity: 1;
   /* normal cursor for active tab */
   cursor: auto;
@@ -1121,24 +1122,25 @@ object {
 }
 
 /* tab background, active state and mouse over */
-.my-slider-tabs span.tab-active,
-.my-slider-tabs span:hover {
+.my-slider-tabs a.tab-active,
+.my-slider-tabs a:hover {
   opacity: 1;
 }
 
 /* tab font size on landscape mobile */
 @media screen and (max-width: 640px) {
-  .my-slider-tabs span {
+  .my-slider-tabs a {
     font-size: 10px;
   }
 }
 /* tab font size on portrait mobile */
 @media screen and (max-width: 360px) {
-  .my-slider-tabs span {
+  .my-slider-tabs a {
     font-size: 8px;
   }
 }
 .slider-tab-wrapper {
+  display: none;
   height: 67px;
   width: 100%;
   position: absolute;
@@ -1177,7 +1179,7 @@ iframe {
   width: 100%;
   min-height: 300px;
   height: 300px;
-  background-color: rgba(54, 61, 99, 0.5);
+  background-color: rgba(24, 129, 68, 0.6);
   vertical-align: middle;
   text-align: center;
 }
@@ -1202,8 +1204,8 @@ h1.slider-fallback-title {
   color: #fff;
   font-size: 50px;
   font-size: 3.125rem;
-  line-height: 56px;
-  line-height: 3.5rem;
+  line-height: 120px;
+  line-height: 7.5rem;
 }
 
 .wanderoper-footer {

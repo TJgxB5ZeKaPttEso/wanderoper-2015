@@ -1,5 +1,9 @@
+.site {
+  background-image: url("../images/bg_neu.jpg");
+}
+
 .site-content {
-  max-width: 1140px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 27px;
@@ -17,9 +21,10 @@
 }
 
 .site-main {
-  width: 66.10169%;
+  width: 100%;
   float: left;
   margin-left: 0;
+  margin-right: 0;
 }
 @media only screen and (max-width: 1024px) {
   .site-main {
@@ -44,7 +49,7 @@
 }
 
 .menu-hauptmenu-container {
-  max-width: 1140px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -56,7 +61,7 @@
 
 article {
   background: #fff;
-  padding: 2.5em 3em;
+  padding: 5.5em 7em;
 }
 @media only screen and (max-width: 30em) {
   article {
