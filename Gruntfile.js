@@ -84,7 +84,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'assets/js/source/**/*.js'
+                'assets/js/source/**/*.js',
+                'js/source/*.js'
             ]
         },
 
@@ -100,8 +101,7 @@ module.exports = function (grunt) {
                     'assets/js/plugins.min.js': [
                         'assets/js/source/plugins.js',
                         'assets/js/vendor/navigation.js',
-                        'assets/js/vendor/skip-link-focus-fix.js',
-                        // 'assets/js/vendor/yourplugin/yourplugin.js',
+                        'assets/js/vendor/skip-link-focus-fix.js'
                     ]
                 }
             },
@@ -112,10 +112,16 @@ module.exports = function (grunt) {
                     sourceMapPrefix: 2
                 },
                 files: {
-                    'assets/js/main.min.js': [
-                        'assets/js/source/main.js'
-                    ]
-                }
+                    'assets/js/main.min.js': [ 'assets/js/source/main.js' ],
+                         }
+            },
+            wanderoper: {
+                files:[{
+                    expand: true,
+                    cwd: 'js/source',
+                    src: '**/*.js',
+                    dest: 'js/build'
+                }]
             }
         },
 

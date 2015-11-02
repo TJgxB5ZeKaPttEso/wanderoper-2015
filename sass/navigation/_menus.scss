@@ -6,8 +6,8 @@
   width: 100%;
   display: block;
   clear: both;
-  background: #313131;
-  background: hsl(0, 0%, 19%);
+  background: #fff;
+  background: hsl(0, 0%, 100%);
 
   ul {
     display: none;
@@ -21,7 +21,7 @@
       position: absolute;
       left: -999em;
       z-index: 99999;
-      background: #333;
+      background: hsl(220, 30%, 90%);
 
       ul {
         left: -999em;
@@ -69,8 +69,7 @@
     padding: 1.3em 1.5em;
     text-decoration: none;
     line-height: 1.3em;
-    color: white;
-    color: hsl(0, 0%, 100%);
+    color:  $color__text-main;;
   }
 
   .current_page_item > a,
@@ -116,3 +115,15 @@
   }
 }
 
+.sub-menu {
+  padding-bottom: 1.3em;
+
+  a {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    &:hover {
+      background: #fff;
+    }
+  }
+  
+}

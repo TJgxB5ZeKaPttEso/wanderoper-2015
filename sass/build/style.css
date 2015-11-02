@@ -554,8 +554,8 @@ a:hover, a:active {
   width: 100%;
   display: block;
   clear: both;
-  background: #313131;
-  background: #303030;
+  background: #fff;
+  background: white;
 }
 .main-navigation ul {
   display: none;
@@ -569,7 +569,7 @@ a:hover, a:active {
   position: absolute;
   left: -999em;
   z-index: 99999;
-  background: #333;
+  background: #dee3ed;
 }
 .main-navigation ul ul ul {
   left: -999em;
@@ -594,8 +594,7 @@ a:hover, a:active {
   padding: 1.3em 1.5em;
   text-decoration: none;
   line-height: 1.3em;
-  color: white;
-  color: white;
+  color: #333c4d;
 }
 
 /* Small menu. */
@@ -631,6 +630,17 @@ a:hover, a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+.sub-menu {
+  padding-bottom: 1.3em;
+}
+.sub-menu a {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+.sub-menu a:hover {
+  background: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1140,7 +1150,6 @@ object {
   }
 }
 .slider-tab-wrapper {
-  display: none;
   height: 67px;
   width: 100%;
   position: absolute;

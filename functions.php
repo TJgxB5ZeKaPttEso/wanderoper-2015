@@ -129,6 +129,11 @@ function wanderoper_2015_scripts()
 
     wp_enqueue_script('wanderoper-2015-min-js', get_template_directory_uri() . '/assets/js/main.min.js');
 
+    if ( is_home() || is_page(774)) {
+        wp_enqueue_script('wanderoper-2015-slider-tabs', get_template_directory_uri() . '/js/build/rev-slider-tabs.js');
+        wp_enqueue_script('wanderoper-2015-repertoire-toggle', get_template_directory_uri() . '/js/build/rep-toggle.js');
+    }
+
     wp_enqueue_script('wanderoper-2015-revslider', get_template_directory_uri() . '/js/revslider.js');
 
     wp_enqueue_style('wanderoper-2015-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
@@ -206,3 +211,20 @@ add_filter('upload_mimes', 'cc_mime_types');
  */
 
 remove_filter('the_content', 'wpautop');
+
+/**
+ * Custom Post Type Menu Highlight
+ */
+
+add_filter( 'nav_menu_css_class', 'namespace_menu_classes', 10, 2 );
+function namespace_menu_classes( $classes , $item ){
+    if ( get_post_type() == 'tribe_events' ) {
+        // remove unwanted classes if found
+        $classes = str_replace( 'current_page_parent', '', $classes );
+        // find the url you want and add the class you want
+        if ( $item->url == '/childrens-books' ) {
+            $classes = str_replace( 'menu-item', 'menu-item current_page_parent', $classes );
+        }
+    }
+    return $classes;
+}
