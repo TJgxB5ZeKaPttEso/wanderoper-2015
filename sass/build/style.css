@@ -548,6 +548,49 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+ul#repertoire.menu {
+  margin: 0;
+}
+
+.repertoire-navigation {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+  position: absolute;
+  bottom: 66px;
+  float: left;
+  width: 100%;
+  display: block;
+  clear: both;
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+}
+.repertoire-navigation a {
+  display: block;
+  padding: 1.3em 1.5em;
+  text-decoration: none;
+  line-height: 1.3em;
+  color: #abadba;
+  max-width: 210px;
+}
+.repertoire-navigation li {
+  position: relative;
+  list-style: none;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.repertoire-navigation li:hover > a, .repertoire-navigation li.focus > a {
+  color: #fff;
+}
+.repertoire-navigation .current_page_item > a,
+.repertoire-navigation .current-menu-item > a,
+.repertoire-navigation .current_page_ancestor > a {
+  color: #fff;
+}
+
 .main-navigation {
   position: relative;
   float: left;

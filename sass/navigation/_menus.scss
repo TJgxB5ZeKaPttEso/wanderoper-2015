@@ -1,5 +1,47 @@
-@import "susy";
+ul#repertoire.menu {
+  margin: 0;
+}
 
+.repertoire-navigation {
+  @include font-size(14);
+  @include line-height(20);
+  position: absolute;
+  bottom: 66px;
+  float: left;
+  width: 100%;
+  display: block;
+  clear: both;
+  background: #000;
+  background: hsla(0, 0%, 0%, 0.5);
+  a {
+    display: block;
+    padding: 1.3em 1.5em;
+    text-decoration: none;
+    line-height: 1.3em;
+    color:  hsl(230, 10% , 70%);
+    max-width: 210px;
+  }
+  li {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    &:hover > a,
+    &.focus > a {
+      color: #fff;
+    }
+  }
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a {
+    color: #fff;
+  }
+
+
+}
 .main-navigation {
   position: relative;
   float: left;

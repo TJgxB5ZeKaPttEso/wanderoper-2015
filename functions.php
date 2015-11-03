@@ -51,6 +51,8 @@ if (!function_exists('wanderoper_2015_setup')) :
             'primary' => esc_html__('Primary Menu', 'wanderoper-2015'),
         ));
 
+        register_nav_menu( 'repertoire', esc_html__( 'Repertoire Menu', 'wanderoper-2015' ) );
+
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
@@ -215,16 +217,28 @@ remove_filter('the_content', 'wpautop');
 /**
  * Custom Post Type Menu Highlight
  */
+add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 
-add_filter( 'nav_menu_css_class', 'namespace_menu_classes', 10, 2 );
-function namespace_menu_classes( $classes , $item ){
-    if ( get_post_type() == 'tribe_events' ) {
-        // remove unwanted classes if found
-        $classes = str_replace( 'current_page_parent', '', $classes );
-        // find the url you want and add the class you want
-        if ( $item->url == '/childrens-books' ) {
-            $classes = str_replace( 'menu-item', 'menu-item current_page_parent', $classes );
-        }
+function add_current_nav_class($classes, $item) {
+
+    // Getting the current post details
+    global $post;
+
+    // Getting the post type of the current post
+    $current_post_type = get_post_type_object(get_post_type($post->ID));
+    $current_post_type_slug = $current_post_type->rewrite['slug'];
+
+    // Getting the URL of the menu item
+    $menu_slug = strtolower(trim($item->url));
+
+    // If the menu item URL contains the current post types slug add the current-menu-item class
+    if (strpos($menu_slug,$current_post_type_slug) !== false) {
+
+        $classes[] = 'current-menu-item';
+
     }
+
+    // Return the corrected set of classes to be added to the menu item
     return $classes;
+
 }

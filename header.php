@@ -104,7 +104,9 @@
         </div>
 </div>
 <!-- .site-branding -->
-
+<nav id="repertoire-navigation" class="repertoire-navigation" role="navigation">
+<?php wp_nav_menu(array('theme_location' => 'repertoire', 'menu_id' => 'repertoire')); ?>
+</nav>
 <nav id="site-navigation" class="main-navigation" role="navigation">
     <button class="menu-toggle" aria-controls="primary-menu"
             aria-expanded="false"><?php esc_html_e('Primary Menu', 'wanderoper-2015'); ?></button>

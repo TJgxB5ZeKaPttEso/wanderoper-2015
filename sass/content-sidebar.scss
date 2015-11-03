@@ -6,6 +6,10 @@
   background-image: url('../images/bg_neu.jpg');
 }
 
+.site-header {
+  position: relative;
+}
+
 .site-content {
   @include container(960px);
   @include margin-top(27);
@@ -34,7 +38,7 @@
 
 }
 
-.menu-hauptmenu-container {
+.menu-hauptmenu-container, .menu-repertoire-container {
   @include container(960px);
 }
 

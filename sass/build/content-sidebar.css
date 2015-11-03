@@ -2,6 +2,10 @@
   background-image: url("../images/bg_neu.jpg");
 }
 
+.site-header {
+  position: relative;
+}
+
 .site-content {
   max-width: 960px;
   margin-left: auto;
@@ -48,12 +52,12 @@
   }
 }
 
-.menu-hauptmenu-container {
+.menu-hauptmenu-container, .menu-repertoire-container {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-.menu-hauptmenu-container:after {
+.menu-hauptmenu-container:after, .menu-repertoire-container:after {
   content: " ";
   display: block;
   clear: both;
