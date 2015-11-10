@@ -74,6 +74,10 @@
   -moz-transition: background-color 0.4s ease-out;
   -o-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
+  @include bp-medium {
+    @include font-size(12);
+    @include line-height(16);
+  }
 
 }
 
@@ -138,18 +142,19 @@ iframe {
   display: table;
   width: 100%;
   min-height: 300px;
-  height: 300px;
   background: no-repeat top center;
   background-size: cover !important;
   -moz-background-size: cover !important;
   -webkit-background-size: cover !important;
+
+  @include bp-small {
+    min-height: 150px;
+  }
 }
 
 .slider-fallback-title-wrapper {
   display: table-cell;
   width: 100%;
-  min-height: 300px;
-  height: 300px;
   background-color: hsla(145, 69%, 30%, 0.6);
   vertical-align: middle;
   text-align: center;
@@ -177,4 +182,8 @@ h1.slider-fallback-title {
 
   @include font-size(50);
   @include line-height(120);
+  @include bp-small {
+    @include font-size(32);
+    @include line-height(38);
+  }
 }

@@ -20,6 +20,9 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+@import "susy";
+
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -104,8 +107,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-@import "susy";
 @import "media/media";
 @import "elements/header";
 @import "revslider";
 @import "globals";
+

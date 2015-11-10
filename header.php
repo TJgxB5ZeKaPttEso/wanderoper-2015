@@ -60,16 +60,26 @@
                     }
 
                 }
-                if (is_post_type_archive()) {
-
-                    // Get Archive name and delete Archive from string
+                if (is_category()) {
                     $title = get_the_archive_title();
-                    $croppedTitle = str_replace('Archive: ', '', $title);
-
+                    $croppedTitle = str_replace('Kategorie: ', '', $title);
                     wanderoper_no_header_thumbnail_before();
                     echo $croppedTitle;
                     wanderoper_header_thumbnail_after();
+
+
                 }
+                    if (is_post_type_archive()) {
+
+                        // Get Archive name and delete Archive from string
+                        $title = get_the_archive_title();
+                        $croppedTitle = str_replace('Archive: ', '', $title);
+
+                        wanderoper_no_header_thumbnail_before();
+                        echo $croppedTitle;
+                        wanderoper_header_thumbnail_after();
+                    }
+
             }
         } else {
             putRevSlider('home-slider-main');
@@ -77,43 +87,23 @@
         }
 
         ?>
-        <?php if (get_header_image() && ('blank' == get_header_textcolor())) : ?>
-            <div class="header-image">
-                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                    <img src="<?php header_image(); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>"
-                         height="<?php echo esc_attr(get_custom_header()->height); ?>" alt="">
-                </a>
-            </div>
-        <?php endif; // End header image check. ?>
-        <?php
-        if (get_header_image() && !('blank' == get_header_textcolor())) {
-            echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">';
-        } else {
-            echo '<div class="site-branding">';
-        }
-        ?>
-        <div class="title-box">
-            <?php if (is_front_page() && is_home()) : ?>
-                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                          rel="home"><?php bloginfo('name'); ?></a></h1>
-            <?php else : ?>
-                <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                         rel="home"><?php bloginfo('name'); ?></a></p>
-            <?php endif; ?>
-            <p class="site-description"><?php bloginfo('description'); ?></p>
-        </div>
-</div>
-<!-- .site-branding -->
+
+
+<?php if ( wp_get_post_parent_id( $post_ID ) == '774' ) : ?>
 <nav id="repertoire-navigation" class="repertoire-navigation" role="navigation">
 <?php wp_nav_menu(array('theme_location' => 'repertoire', 'menu_id' => 'repertoire')); ?>
-</nav>
+</nav>  <?php  endif; ?>
+
+
 <nav id="site-navigation" class="main-navigation" role="navigation">
     <button class="menu-toggle" aria-controls="primary-menu"
-            aria-expanded="false"><?php esc_html_e('Primary Menu', 'wanderoper-2015'); ?></button>
+            aria-expanded="false"><?php esc_html_e('Menu', 'wanderoper-2015'); ?></button>
     <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'wanderoper-2015'); ?></a>
     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
 </nav>
 <!-- #site-navigation -->
+<?php //wanderoper_permalink (); ?>
+
 </header>
 <!-- #masthead -->
 

@@ -15,7 +15,7 @@
             //console.log("slide changed to: "+data.slideIndex);
             //console.log("current slide <li> Index: "+data.slideLIIndex);
             var slideIndex = data.slideLIIndex;
-            console.log(slideIndex);
+            //console.log(slideIndex);
             //data.currentslide - Current  Slide as jQuery Object
             //data.prevslide - Previous Slide as jQuery Object
             $(".my-slider-tabs a:eq(" + slideIndex + ")").addClass('tab-active');

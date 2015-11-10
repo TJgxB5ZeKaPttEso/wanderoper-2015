@@ -300,9 +300,9 @@ h1 {
 
 h2 {
   clear: both;
-  font-size: 24px;
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin: 0.5em 0;
   font-weight: 400;
 }
 
@@ -311,6 +311,7 @@ h3, h4, h5, h6 {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: normal;
+  margin: 0.5em 0;
 }
 
 .entry-title {
@@ -394,15 +395,19 @@ body {
 blockquote, q {
   quotes: "" "";
   background-color: #eef0f6;
-  margin: 0;
-  padding: 1em;
-  border-left: 15px solid;
+  margin: 0.5em 0;
+  padding: 0.8em;
+  border-left: 5px solid;
 }
 blockquote:before, q:before {
   content: "";
 }
 blockquote:after, q:after {
   content: "";
+}
+
+q {
+  padding: 0.4em;
 }
 
 hr {
@@ -413,7 +418,7 @@ hr {
 }
 
 ul, ol {
-  margin: 0 0 1.5em 1em;
+  margin: 0 0 1.5em 0.5em;
 }
 
 ul {
@@ -427,7 +432,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 dt {
@@ -582,13 +587,23 @@ ul#repertoire.menu {
   vertical-align: middle;
   text-align: center;
 }
-.repertoire-navigation li:hover > a, .repertoire-navigation li.focus > a {
-  color: #fff;
-}
 .repertoire-navigation .current_page_item > a,
 .repertoire-navigation .current-menu-item > a,
 .repertoire-navigation .current_page_ancestor > a {
   color: #fff;
+}
+@media only screen and (max-width: 1024px) {
+  .repertoire-navigation {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 16px;
+    line-height: 1rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .repertoire-navigation {
+    display: none;
+  }
 }
 
 .main-navigation {
@@ -607,12 +622,28 @@ ul#repertoire.menu {
   padding-left: 0;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
   float: left;
   position: absolute;
   left: -999em;
   z-index: 99999;
-  background: #dee3ed;
+  background: #fff;
+}
+.main-navigation ul ul .current_page_item > a,
+.main-navigation ul ul .current-menu-item > a,
+.main-navigation ul ul .current_page_ancestor > a {
+  background: #ffffff;
+}
+@media only screen and (max-width: 30em) {
+  .main-navigation ul ul {
+    display: block;
+    position: relative;
+    left: 0;
+    top: inherit;
+    float: none;
+    padding-left: 1em;
+    box-shadow: none;
+  }
 }
 .main-navigation ul ul ul {
   left: -999em;
@@ -624,6 +655,11 @@ ul#repertoire.menu {
 .main-navigation ul ul a {
   width: 200px;
 }
+@media only screen and (max-width: 30em) {
+  .main-navigation ul ul a {
+    width: 100%;
+  }
+}
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
@@ -632,6 +668,14 @@ ul#repertoire.menu {
   float: left;
   position: relative;
 }
+@media only screen and (max-width: 30em) {
+  .main-navigation li {
+    float: none;
+  }
+}
+.main-navigation li:hover > a, .main-navigation li.focus > a {
+  background: #e6e6e6;
+}
 .main-navigation a {
   display: block;
   padding: 1.3em 1.5em;
@@ -639,11 +683,42 @@ ul#repertoire.menu {
   line-height: 1.3em;
   color: #333c4d;
 }
+@media only screen and (max-width: 30em) {
+  .main-navigation a {
+    padding: 0.8em;
+    width: 100%;
+  }
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
+  background: #e2000b;
+  color: #fff;
+}
 
 /* Small menu. */
-.menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  background: #ffffff;
+  border: none;
+  color: #333c4d;
+  font-family: "Montserrat", arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  box-shadow: none;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -677,6 +752,11 @@ ul#repertoire.menu {
 
 .sub-menu {
   padding-bottom: 1.3em;
+}
+@media only screen and (max-width: 30em) {
+  .sub-menu {
+    padding-bottom: 0em;
+  }
 }
 .sub-menu a {
   padding-top: 0.4em;
@@ -1165,6 +1245,14 @@ object {
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
 }
+@media only screen and (max-width: 1024px) {
+  .my-slider-tabs a {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 16px;
+    line-height: 1rem;
+  }
+}
 
 /* active tab styles */
 .my-slider-tabs a.tab-active {
@@ -1219,18 +1307,20 @@ iframe {
   display: table;
   width: 100%;
   min-height: 300px;
-  height: 300px;
   background: no-repeat top center;
   background-size: cover !important;
   -moz-background-size: cover !important;
   -webkit-background-size: cover !important;
 }
+@media only screen and (max-width: 30em) {
+  .slider-fallback {
+    min-height: 150px;
+  }
+}
 
 .slider-fallback-title-wrapper {
   display: table-cell;
   width: 100%;
-  min-height: 300px;
-  height: 300px;
   background-color: rgba(24, 129, 68, 0.6);
   vertical-align: middle;
   text-align: center;
@@ -1258,6 +1348,14 @@ h1.slider-fallback-title {
   font-size: 3.125rem;
   line-height: 120px;
   line-height: 7.5rem;
+}
+@media only screen and (max-width: 30em) {
+  h1.slider-fallback-title {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 38px;
+    line-height: 2.375rem;
+  }
 }
 
 .wanderoper-footer {

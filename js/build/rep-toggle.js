@@ -1,1 +1,1 @@
-!function(a){jQuery(document).ready(function(){a(".slider-tab-wrapper").css("display","none");var b=a("a:contains('Repertoire')");b.click(function(b){b.preventDefault(),a(".slider-tab-wrapper").slideToggle("fast")})})}(jQuery);
+!function(a){jQuery(document).ready(function(){a(".slider-tab-wrapper").css("display","none");var b=a("a:contains('Repertoire')");b.click(function(b){var c=a(window).width();600>c||(b.preventDefault(),a(".slider-tab-wrapper").slideToggle("fast"))})})}(jQuery);

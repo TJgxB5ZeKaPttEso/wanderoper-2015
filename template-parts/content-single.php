@@ -39,9 +39,9 @@
     </div>
     <!-- .entry-content -->
 
-    <footer class="entry-footer">
-        <?php wanderoper_2015_entry_footer(); ?>
+<!--    <footer class="entry-footer">
+        <?php /*wanderoper_2015_entry_footer(); */?>
     </footer>
-    <!-- .entry-footer -->
+-->    <!-- .entry-footer -->
 </article><!-- #post-## -->
 

@@ -52,12 +52,12 @@
   }
 }
 
-.menu-hauptmenu-container, .menu-repertoire-container {
+.menu-menue-container, .menu-repertoire-container {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-.menu-hauptmenu-container:after, .menu-repertoire-container:after {
+.menu-menue-container:after, .menu-repertoire-container:after {
   content: " ";
   display: block;
   clear: both;
@@ -65,7 +65,7 @@
 
 article {
   background: #fff;
-  padding: 5.5em 7em;
+  padding: 4em 7em;
 }
 @media only screen and (max-width: 30em) {
   article {

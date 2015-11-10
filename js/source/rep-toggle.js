@@ -10,8 +10,13 @@
         // --> Repertoire jQuery Setup
         var repertoireItem = $("a:contains('Repertoire')");
         repertoireItem.click(function(e) {
-            e.preventDefault();
-            $(".slider-tab-wrapper").slideToggle("fast");
+            var width = $(window).width();
+            if ( width < 600 ) {
+                return;
+            } else {
+                e.preventDefault();
+                $(".slider-tab-wrapper").slideToggle("fast");
+            }
         });
 
 

@@ -125,9 +125,9 @@ function wanderoper_2015_scripts()
 {
     wp_enqueue_style('wanderoper-2015-style', get_stylesheet_uri());
 
-    wp_enqueue_script('wanderoper-2015-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true);
+    wp_enqueue_script('wanderoper-2015-navigation', get_template_directory_uri() . '/js/build/navigation.js', array(), '20120206', true);
 
-    wp_enqueue_script('wanderoper-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
+    wp_enqueue_script('wanderoper-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/build/skip-link-focus-fix.js', array(), '20130115', true);
 
     wp_enqueue_script('wanderoper-2015-min-js', get_template_directory_uri() . '/assets/js/main.min.js');
 
@@ -136,7 +136,7 @@ function wanderoper_2015_scripts()
         wp_enqueue_script('wanderoper-2015-repertoire-toggle', get_template_directory_uri() . '/js/build/rep-toggle.js');
     }
 
-    wp_enqueue_script('wanderoper-2015-revslider', get_template_directory_uri() . '/js/revslider.js');
+    wp_enqueue_script('wanderoper-2015-revslider', get_template_directory_uri() . '/js/build/revslider.js');
 
     wp_enqueue_style('wanderoper-2015-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
@@ -217,28 +217,4 @@ remove_filter('the_content', 'wpautop');
 /**
  * Custom Post Type Menu Highlight
  */
-add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 
-function add_current_nav_class($classes, $item) {
-
-    // Getting the current post details
-    global $post;
-
-    // Getting the post type of the current post
-    $current_post_type = get_post_type_object(get_post_type($post->ID));
-    $current_post_type_slug = $current_post_type->rewrite['slug'];
-
-    // Getting the URL of the menu item
-    $menu_slug = strtolower(trim($item->url));
-
-    // If the menu item URL contains the current post types slug add the current-menu-item class
-    if (strpos($menu_slug,$current_post_type_slug) !== false) {
-
-        $classes[] = 'current-menu-item';
-
-    }
-
-    // Return the corrected set of classes to be added to the menu item
-    return $classes;
-
-}
