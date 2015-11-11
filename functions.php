@@ -212,9 +212,38 @@ add_filter('upload_mimes', 'cc_mime_types');
  * remove Auto p tags
  */
 
-remove_filter('the_content', 'wpautop');
+//remove_filter('the_content', 'wpautop');
+
 
 /**
- * Custom Post Type Menu Highlight
+ * Adds start time to event titles in Month view
  */
+function tribe_add_start_time_to_event_title ( $post_title, $post_id ) {
 
+    if ( !tribe_is_event($post_id) ) return $post_title;
+    // Checks if it is the month view, modify this line to apply to more views
+    //if ( !tribe_is_month() ) return $post_title;
+
+    //---
+
+    if (tribe_is_past() || tribe_is_upcoming() && !is_tax()) {
+        $event_start_time = tribe_get_start_time($post_id);
+        if (!empty($event_start_time)) {
+         //   $post_title = $post_title . ' | ' . $event_start_time;
+        }
+        return $post_title;
+    } else {
+        return $post_title;
+    }
+}
+add_filter( 'the_title', 'tribe_add_start_time_to_event_title', 100, 2 );
+
+add_filter( 'tribe_events_event_schedule_details_formatting', 'remove_end_time', 10, 2);
+
+function remove_end_time( $formatting_details ) {
+    if( tribe_is_past() || tribe_is_upcoming() && !is_tax() ) {
+        $formatting_details['show_end_time'] = 0;
+    }
+
+    return $formatting_details;
+}

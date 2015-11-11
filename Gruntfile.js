@@ -37,6 +37,8 @@ module.exports = function (grunt) {
                 files: {
                     'sass/build/style.css': 'sass/style.scss',
                     'sass/build/content-sidebar.css': 'sass/content-sidebar.scss',
+                    'sass/build/tribe-events.css': 'sass/tribe-events.scss'
+
                 }
             }
         },
@@ -64,7 +66,7 @@ module.exports = function (grunt) {
             minify: {
                 expand: true,
                 cwd: 'sass/build',
-                src: ['*.css', '!*.min.css', '!content-sidebar.css'],
+                src: ['*.css', '!*.min.css', '!content-sidebar.css', '!tribe-events.css'],
                 ext: '.css'
             },
             optionallayouts: {
@@ -72,6 +74,13 @@ module.exports = function (grunt) {
                 cwd: 'sass/build',
                 src: ['content-sidebar.css'],
                 dest: 'layouts',
+                ext: '.css'
+            },
+            tribeevents: {
+                expand: true,
+                cwd: 'sass/build',
+                src: ['tribe-events.css'],
+                dest: 'tribe-events',
                 ext: '.css'
             }
         },

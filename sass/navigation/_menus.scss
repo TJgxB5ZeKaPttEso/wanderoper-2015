@@ -71,11 +71,6 @@ ul#repertoire.menu {
       z-index: 99999;
       background: #fff;
 
-      .current_page_item > a,
-      .current-menu-item > a,
-      .current_page_ancestor > a {
-        background: #ffffff;
-      }
       @include bp-small {
         display: block;
         position: relative;

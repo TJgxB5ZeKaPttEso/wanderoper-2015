@@ -43,6 +43,7 @@
         //------------ Check for corresponding slider Alias
 
         $aliases = all_rev_sliders_in_array();
+            //print_r(array_values($aliases));
         if (!is_home()) {
             if (in_array($slug, $aliases)) {
                 putRevSlider($slug);

@@ -629,11 +629,6 @@ ul#repertoire.menu {
   z-index: 99999;
   background: #fff;
 }
-.main-navigation ul ul .current_page_item > a,
-.main-navigation ul ul .current-menu-item > a,
-.main-navigation ul ul .current_page_ancestor > a {
-  background: #ffffff;
-}
 @media only screen and (max-width: 30em) {
   .main-navigation ul ul {
     display: block;
