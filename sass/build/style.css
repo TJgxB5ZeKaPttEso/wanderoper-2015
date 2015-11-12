@@ -1312,21 +1312,37 @@ iframe {
     min-height: 150px;
   }
 }
-
-.slider-fallback-title-wrapper {
+.slider-fallback .slider-fallback-title-wrapper {
   display: table-cell;
   width: 100%;
   background-color: rgba(24, 129, 68, 0.6);
   vertical-align: middle;
   text-align: center;
 }
-.slider-fallback-title-wrapper img {
+.slider-fallback .slider-fallback-title-wrapper .slider-fallback-container {
+  display: table;
+  margin: 0 auto;
+}
+.slider-fallback .slider-fallback-title-wrapper .slider-fallback-container img {
   width: 50px;
   margin-right: 10px;
-  display: table-cell;
   vertical-align: middle;
 }
-.slider-fallback-title-wrapper span {
+@media only screen and (max-width: 30em) {
+  .slider-fallback .slider-fallback-title-wrapper .slider-fallback-container img {
+    display: block;
+    margin: auto;
+    width: 30px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .slider-fallback .slider-fallback-title-wrapper .slider-fallback-container {
+    display: block;
+  }
+}
+.slider-fallback .slider-fallback-title-wrapper span {
   color: #FFF;
   text-transform: uppercase;
   font-size: 24px;
@@ -1336,8 +1352,15 @@ iframe {
   font-weight: 700;
   text-align: left;
 }
-
-h1.slider-fallback-title {
+@media only screen and (max-width: 1024px) {
+  .slider-fallback .slider-fallback-title-wrapper span {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    display: block;
+    text-align: center;
+  }
+}
+.slider-fallback h1.slider-fallback-title {
   color: #fff;
   font-size: 50px;
   font-size: 3.125rem;
@@ -1345,11 +1368,11 @@ h1.slider-fallback-title {
   line-height: 7.5rem;
 }
 @media only screen and (max-width: 30em) {
-  h1.slider-fallback-title {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 38px;
-    line-height: 2.375rem;
+  .slider-fallback h1.slider-fallback-title {
+    font-size: 25px;
+    font-size: 1.5625rem;
+    line-height: 26px;
+    line-height: 1.625rem;
   }
 }
 

@@ -36,12 +36,11 @@
 			'after'  => '</div>',
 		) );
 		?>
-		<?php the_post_navigation(); ?>
 	</div>
 	<!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php wanderoper_2015_entry_footer(); ?>
+		<?php 	edit_post_link( esc_html__( ' Bearbeiten', 'wanderoper-2015' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer>
 	<!-- .entry-footer -->

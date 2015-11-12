@@ -28,8 +28,8 @@ function wanderoper_header_thumbnail_before () {
 	$thumb_url = wp_get_attachment_image_src($thumb_id, 'large-thumb', true);
 
 	echo
-		'<div class="slider-fallback"  style="background-image: url(' .
-		$thumb_url[0] . ')"><div class="slider-fallback-title-wrapper">' .
+		'<div class="slider-fallback"  style="background: url(' .
+		$thumb_url[0] . ') center -129px"><div class="slider-fallback-title-wrapper">' .
 		'<h1 class="slider-fallback-title">';
 }
 function wanderoper_no_header_thumbnail_before () {
@@ -42,7 +42,7 @@ function wanderoper_header_thumbnail_after ()
 {
 	echo
 		'</h1>' .
-		'<div style="display: table; margin: 0 auto;">
+		'<div class = "slider-fallback-container">
 		<img src="wp-content/themes/wanderoper-2015/images/logo.svg">
 		<span>Wanderoper Brandenburg</span></div>' .
 		'</div></div>';

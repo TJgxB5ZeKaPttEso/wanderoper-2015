@@ -15,7 +15,7 @@
                 return;
             } else {
                 e.preventDefault();
-                $(".slider-tab-wrapper").slideToggle("fast");
+                $(".slider-tab-wrapper").slideToggle("spring");
             }
         });
 

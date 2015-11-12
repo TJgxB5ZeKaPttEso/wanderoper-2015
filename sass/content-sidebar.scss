@@ -14,7 +14,9 @@
   @include container(960px);
   @include margin-top(27);
   @include bp-medium{
-    margin-top: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
 }

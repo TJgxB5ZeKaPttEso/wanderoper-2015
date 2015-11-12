@@ -150,40 +150,60 @@ iframe {
   @include bp-small {
     min-height: 150px;
   }
-}
 
-.slider-fallback-title-wrapper {
-  display: table-cell;
-  width: 100%;
-  background-color: hsla(145, 69%, 30%, 0.6);
-  vertical-align: middle;
-  text-align: center;
-  img {
-    width: 50px;
-    margin-right: 10px;
+  .slider-fallback-title-wrapper {
     display: table-cell;
+    width: 100%;
+    background-color: hsla(145, 69%, 30%, 0.6);
     vertical-align: middle;
+    text-align: center;
+    .slider-fallback-container {
+      display: table;
+      margin: 0 auto;
+      img {
+        width: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        @include bp-small {
+          display: block;
+          margin: auto;
+          width: 30px;
+          padding-top: 14px;
+          padding-bottom: 15px;
+        }
+      }
+      @include bp-small {
+        display: block;
+      }
+    }
+
+    span {
+      color: #FFF;
+      text-transform: uppercase;
+      @include font-size(24);
+      display: table-cell;
+      vertical-align: middle;
+      font-weight: 700;
+      text-align: left;
+      @include bp-medium {
+        @include font-size(19);
+        display: block;
+        text-align: center;
+
+      }
+    }
+
   }
-  span {
-    color: #FFF;
-    text-transform: uppercase;
-    @include font-size(24);
-    display: table-cell;
-    vertical-align: middle;
-    font-weight: 700;
-    text-align: left;
-  }
 
-}
+  h1.slider-fallback-title {
+    color: #fff;
+    //display: table-cell;
 
-h1.slider-fallback-title {
-  color: #fff;
-  //display: table-cell;
-
-  @include font-size(50);
-  @include line-height(120);
-  @include bp-small {
-    @include font-size(32);
-    @include line-height(38);
+    @include font-size(50);
+    @include line-height(120);
+    @include bp-small {
+      @include font-size(25);
+      @include line-height(26);
+    }
   }
 }

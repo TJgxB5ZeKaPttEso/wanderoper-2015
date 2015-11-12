@@ -50,23 +50,23 @@ function wanderoper_2015_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'wanderoper-2015' ) );
 		if ( $categories_list && wanderoper_2015_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wanderoper-2015' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			//printf( '<span class="cat-links">' . esc_html__( 'Ver&ouml;ffentlicht in %1$s', 'wanderoper-2015' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wanderoper-2015' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wanderoper-2015' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			//printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wanderoper-2015' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'wanderoper-2015' ), esc_html__( '1 Comment', 'wanderoper-2015' ), esc_html__( '% Comments', 'wanderoper-2015' ) );
-		echo '</span>';
-	}
+//	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+//		echo '<span class="comments-link">';
+//		comments_popup_link( esc_html__( ' Kommentieren', 'wanderoper-2015' ), esc_html__( '1 Comment', 'wanderoper-2015' ), esc_html__( '% Comments', 'wanderoper-2015' ) );
+//		echo '</span>';
+//	}
 
-	edit_post_link( esc_html__( 'Edit', 'wanderoper-2015' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( ' Bearbeiten', 'wanderoper-2015' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
