@@ -67,6 +67,11 @@ article {
   background: #fff;
   padding: 4em 7em;
 }
+@media only screen and (max-width: 1024px) {
+  article {
+    padding: 1.5em 1.5em;
+  }
+}
 @media only screen and (max-width: 30em) {
   article {
     padding: 1.5em 1.5em;
