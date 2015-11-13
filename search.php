@@ -44,4 +44,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
+</div><!-- #page-wrap-->
 <?php get_footer(); ?>

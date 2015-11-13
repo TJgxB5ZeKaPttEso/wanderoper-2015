@@ -28,4 +28,5 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+</div><!-- #page-wrap-->
 <?php get_footer(); ?>

@@ -247,3 +247,25 @@ function remove_end_time( $formatting_details ) {
 
     return $formatting_details;
 }
+
+
+
+
+
+
+
+
+
+/**
+ * Event title link to repertoire page
+ */
+
+function tribe_set_link_website ( $link, $postId ) {
+    $website_url = tribe_get_event_website_url( $postId );
+    // Only swaps link if set
+    if ( !empty( $website_url ) ) {
+        $link = $website_url;
+    }
+    return $link;
+}
+add_filter( 'tribe_get_event_link', 'tribe_set_link_website', 100, 2 );

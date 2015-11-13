@@ -455,6 +455,10 @@ table {
   width: 100%;
 }
 
+.page-id-1438 .entry-title {
+  margin: 0 65px 0;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -1376,15 +1380,54 @@ iframe {
   }
 }
 
+* {
+  margin: 0;
+}
+
+html, body {
+  background-image: url("images/bg_neu.jpg");
+  height: 100%;
+}
+
+div#page {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 142px;
+}
+
+.site-footer {
+  background: #333333;
+}
+
 .wanderoper-footer {
-  max-width: 1140px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-align: center;
+  color: #bfbfbf;
 }
 .wanderoper-footer:after {
   content: " ";
   display: block;
   clear: both;
+}
+.wanderoper-footer a {
+  color: #bfbfbf;
 }
 
 /*# sourceMappingURL=style.css.map */

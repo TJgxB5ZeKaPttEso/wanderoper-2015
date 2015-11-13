@@ -1,3 +1,37 @@
+* {
+  margin: 0;
+}
+html, body {
+  background-image: url('images/bg_neu.jpg');
+  height: 100%;
+}
+div#page {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+.site-footer, .page-wrap:after {
+  height: 142px;
+}
+.site-footer {
+  background: #333333;
+}
+
 .wanderoper-footer {
-  @include container(1140px);
+  @include container(960px);
+  @include font-size(14);
+  font-weight: normal;
+  text-align: center;
+  color: hsl(240, 0%, 75%);;
+  a {
+    color: hsl(240, 0%, 75%);;
+  }
+
 }
